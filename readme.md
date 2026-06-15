@@ -1,9 +1,9 @@
 <div align="center">
 
-# 🌸 SAKURA GARDEN: QUEST OF DAS-BABA 🌸
+# ⛩️ BUSHIDO PATH: DAS-BABA PROFILE ⛩️
 
-<!-- Unified JRPG Visual Novel Game Screen -->
-<img src="assets/sakura-dashboard.svg" width="100%" alt="Sakura Game Dashboard" />
+<!-- Unified Samurai Biker themed JRPG Visual Novel Game Screen -->
+<img src="assets/samurai-dashboard.svg" width="100%" alt="Samurai Uchiha Biker Game Dashboard" />
 
 <br /><br />
 
@@ -28,6 +28,6 @@
 
 <br />
 
-<img src="https://komarev.com/ghpvc/?username=DAS-BABA&style=for-the-badge&color=ff8fa3" alt="Views Counter" />
+<img src="https://komarev.com/ghpvc/?username=DAS-BABA&style=for-the-badge&color=b91c1c" alt="Views Counter" />
 
 </div>

@@ -1,0 +1,394 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1350" width="100%" height="1350" style="background: transparent;">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="slate-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0f4f8" />
+      <stop offset="50%" stop-color="#d9e2ec" />
+      <stop offset="100%" stop-color="#bcccdc" />
+    </linearGradient>
+    <linearGradient id="blue-accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0052ff" />
+      <stop offset="100%" stop-color="#00d9ff" />
+    </linearGradient>
+    <linearGradient id="dark-card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e1118" />
+      <stop offset="100%" stop-color="#1b2230" />
+    </linearGradient>
+    <linearGradient id="hp-blue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d9ff" />
+      <stop offset="100%" stop-color="#0052ff" />
+    </linearGradient>
+
+    <!-- Chidori Lightning Glow Filter -->
+    <filter id="chidori-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Tomoe Shape for Sharingan -->
+    <g id="tomoe">
+      <path d="M 0,0 C 2.5,-2.5 5,-2.5 5,0 C 5,2.5 2.5,5 0,5 C -2.5,5 -5,2.5 -5,0 C -5,-3.5 -2.5,-5.5 0,-7 C 0.6,-7 0.6,-5 0,0" fill="#111115" />
+    </g>
+
+    <clipPath id="sasuke-clip">
+      <rect x="0" y="0" width="360" height="360" rx="20" />
+    </clipPath>
+  </defs>
+
+  <style>
+    .bold-title { font-family: 'Impact', 'Arial Black', sans-serif; font-size: 52px; fill: #111115; letter-spacing: 2px; }
+    .sub-banner-text { font-family: 'Georgia', serif; font-size: 24px; font-weight: bold; fill: #ffffff; text-anchor: middle; }
+    .text-quote { font-family: 'Georgia', serif; font-size: 13px; fill: #334e68; font-style: italic; line-height: 1.6; }
+    .text-quote-author { font-family: 'Georgia', serif; font-size: 12px; font-weight: bold; fill: #102a43; }
+    
+    .nav-item { font-family: 'Segoe UI', sans-serif; font-size: 12px; fill: #486581; font-weight: bold; }
+    .nav-item-active { font-family: 'Segoe UI', sans-serif; font-size: 12px; fill: #0052ff; font-weight: bold; }
+    
+    .logo-subtitle { font-family: 'Segoe UI', sans-serif; font-size: 9px; fill: #486581; font-weight: bold; }
+    .logo-title { font-family: 'Segoe UI', sans-serif; font-size: 12px; fill: #102a43; font-weight: 800; }
+    
+    .card-title { font-family: 'Segoe UI', sans-serif; font-size: 11px; fill: #00d9ff; font-weight: 800; letter-spacing: 2px; }
+    .label { font-family: 'Segoe UI', sans-serif; font-size: 9px; fill: #9fb3c8; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+    .value { font-family: 'Segoe UI', sans-serif; font-size: 11px; fill: #ffffff; font-weight: bold; }
+    
+    .slot-bg { fill: #102a43; stroke: #243b53; stroke-width: 1.5; }
+    .item-title { font-family: 'Segoe UI', sans-serif; font-size: 9px; fill: #ffffff; font-weight: bold; text-anchor: middle; }
+    .item-rarity { font-family: 'Segoe UI', sans-serif; font-size: 7px; font-weight: 800; text-anchor: middle; }
+    .item-stats { font-family: 'Courier New', monospace; font-size: 8px; fill: #9fb3c8; text-anchor: middle; }
+
+    .quest-card { fill: #0f172a; stroke: #1e293b; stroke-width: 1.5; }
+    .quest-title { font-family: 'Georgia', serif; font-size: 11px; font-weight: bold; fill: #ffffff; }
+    .quest-desc { font-family: 'Segoe UI', sans-serif; font-size: 10px; fill: #cbd5e1; }
+    .quest-reward { font-family: monospace; font-size: 9px; fill: #00d9ff; font-weight: bold; }
+    .quest-status { font-family: monospace; font-size: 9px; font-weight: bold; }
+
+    @keyframes chidori {
+      0% { opacity: 0.8; }
+      50% { opacity: 1; filter: drop-shadow(0 0 12px #00d9ff); }
+      100% { opacity: 0.8; }
+    }
+    .lightning { animation: chidori 2s infinite ease-in-out; }
+  </style>
+
+  <!-- Outer Dark Frame -->
+  <rect x="5" y="5" width="790" height="1340" rx="26" fill="#111115" />
+
+  <!-- Main Card Body (Frosted Silver Gradient) -->
+  <rect x="20" y="20" width="760" height="1310" rx="20" fill="url(#slate-bg)" />
+
+  <!-- ==================== HEADER LOGO & NAV ==================== -->
+  <g transform="translate(50, 45)">
+    <!-- Custom Uchiha-AI styled logo -->
+    <rect x="0" y="5" width="45" height="45" rx="8" fill="#0052ff" />
+    <polygon points="12,38 22,12 33,38" fill="#ffe259" />
+    <polygon points="17,38 22,24 28,38" fill="#0052ff" />
+    
+    <text x="55" y="25" class="logo-title">DAS-BABA</text>
+    <text x="55" y="38" class="logo-subtitle">PART OF RUANG CODE // RUANG_CODE</text>
+
+    <!-- Navigation Menu -->
+    <g transform="translate(350, 15)">
+      <!-- Capsule highlight around motivation/quests -->
+      <rect x="65" y="-12" width="95" height="24" rx="12" fill="none" stroke="#0052ff" stroke-width="2" />
+      <text x="20" y="4" class="nav-item">Home</text>
+      <text x="80" y="4" class="nav-item-active">Motivation</text>
+      <text x="180" y="4" class="nav-item">Gallery</text>
+      <text x="250" y="4" class="nav-item">About</text>
+      <text x="310" y="4" class="nav-item">Contact us</text>
+    </g>
+  </g>
+
+  <!-- ==================== MAIN HERO HEADERS ==================== -->
+  <g transform="translate(50, 130)">
+    <!-- Big Bold Title -->
+    <text x="0" y="45" class="bold-title">KEYAKINAN AKAN</text>
+    
+    <!-- Blue Banner Sub-title -->
+    <rect x="0" y="65" width="310" height="45" rx="6" fill="#0052ff" />
+    <text x="155" y="96" class="sub-banner-text">— Memberikanmu —</text>
+    
+    <!-- Big Outlined Title -->
+    <text x="0" y="165" class="bold-title" stroke="#111115" stroke-width="1.5" fill="none">KEKUATAN</text>
+
+    <!-- Quote Box -->
+    <g transform="translate(0, 195)">
+      <text x="0" y="15" class="text-quote">"Tak peduli kegelapan apa yang ada di depan, aku akan tetap mengejar jalan itu.</text>
+      <text x="0" y="33" class="text-quote">Tidak peduli apa yang akan terjadi, aku akan tetap memperoleh kekuatan!"</text>
+      <text x="0" y="55" class="text-quote-author">Quote by - uchiha Sasuke</text>
+    </g>
+  </g>
+
+  <!-- ==================== SHARINGAN ICONS ==================== -->
+  <g transform="translate(420, 395)">
+    <!-- Sharingan 1: Standard 3-Tomoe -->
+    <g transform="translate(0, 0)">
+      <circle cx="30" cy="30" r="28" fill="#e63946" stroke="#111115" stroke-width="3" />
+      <circle cx="30" cy="30" r="14" fill="none" stroke="#111115" stroke-width="1.5" />
+      <circle cx="30" cy="30" r="5" fill="#111115" />
+      <!-- Tomoes -->
+      <use href="#tomoe" transform="translate(30, 30) translate(0, -14) rotate(0)" />
+      <use href="#tomoe" transform="translate(30, 30) translate(12, 7) rotate(120)" />
+      <use href="#tomoe" transform="translate(30, 30) translate(-12, 7) rotate(240)" />
+    </g>
+
+    <!-- Sharingan 2: Sasuke Eternal Mangekyou -->
+    <g transform="translate(90, 0)">
+      <circle cx="30" cy="30" r="28" fill="#111115" stroke="#111115" stroke-width="3" />
+      <!-- Red background star -->
+      <circle cx="30" cy="30" r="26" fill="#e63946" />
+      <!-- Sasuke EMS Ellipses -->
+      <ellipse cx="30" cy="30" rx="26" ry="6" fill="#111115" transform="rotate(0, 30, 30)" />
+      <ellipse cx="30" cy="30" rx="26" ry="6" fill="#111115" transform="rotate(60, 30, 30)" />
+      <ellipse cx="30" cy="30" rx="26" ry="6" fill="#111115" transform="rotate(120, 30, 30)" />
+      <!-- Center overlays -->
+      <circle cx="30" cy="30" r="11" fill="#e63946" />
+      <!-- Triangle star blades -->
+      <polygon points="30,19 33,26 39,30 33,34 30,41 27,34 21,30 27,26" fill="#111115" />
+      <circle cx="30" cy="30" r="4.5" fill="#e63946" />
+      <circle cx="30" cy="30" r="2" fill="#111115" />
+    </g>
+
+    <!-- Sharingan 3: Itachi Mangekyou -->
+    <g transform="translate(180, 0)">
+      <circle cx="30" cy="30" r="28" fill="#e63946" stroke="#111115" stroke-width="3" />
+      <circle cx="30" cy="30" r="6" fill="#111115" />
+      <!-- 3 curved blades -->
+      <path d="M 30,24 C 25,24 20,20 20,15 C 25,18 29,22 30,24" fill="#111115" transform="rotate(0, 30, 30)" />
+      <path d="M 30,24 C 25,24 20,20 20,15 C 25,18 29,22 30,24" fill="#111115" transform="rotate(120, 30, 30)" />
+      <path d="M 30,24 C 25,24 20,20 20,15 C 25,18 29,22 30,24" fill="#111115" transform="rotate(240, 30, 30)" />
+    </g>
+  </g>
+
+  <!-- ==================== PROFILE STATS CARD ==================== -->
+  <g transform="translate(420, 130)">
+    <!-- Dark glass stats container -->
+    <rect x="0" y="0" width="310" height="245" rx="16" fill="url(#dark-card)" stroke="#243b53" stroke-width="1.5" />
+    
+    <g transform="translate(20, 20)">
+      <text x="0" y="10" class="card-title">CHIDORI BUILDER // STATUS</text>
+      
+      <!-- LV Badge -->
+      <g transform="translate(0, 25)">
+        <rect x="0" y="0" width="45" height="45" rx="8" fill="#102a43" stroke="#00d9ff" stroke-width="1.5" />
+        <text x="22.5" y="16" text-anchor="middle" font-family="Segoe UI" font-size="8" font-weight="900" fill="#00d9ff">LV</text>
+        <text x="22.5" y="38" text-anchor="middle" font-family="Georgia" font-size="20" font-weight="900" fill="#ffffff">21</text>
+      </g>
+
+      <!-- HP MP Gauges -->
+      <g transform="translate(60, 25)">
+        <!-- HP -->
+        <text x="0" y="10" class="label">HP</text>
+        <rect x="25" y="2" width="130" height="8" rx="2" fill="#102a43" />
+        <rect x="25" y="2" width="130" height="8" rx="2" fill="url(#hp-blue)" />
+        <text x="165" y="10" class="value">999</text>
+
+        <!-- MP -->
+        <text x="0" y="25" class="label">MP</text>
+        <rect x="25" y="17" width="130" height="8" rx="2" fill="#102a43" />
+        <rect x="25" y="17" width="130" height="8" rx="2" fill="url(#hp-blue)" />
+        <text x="165" y="25" class="value">750</text>
+      </g>
+
+      <!-- Attributes list -->
+      <g transform="translate(0, 90)">
+        <text x="0" y="12" class="label">STR (Frontend):</text>
+        <text x="120" y="12" class="value">85</text>
+        <line x1="145" y1="9" x2="260" y2="9" stroke="#0052ff" stroke-width="4" stroke-linecap="round" />
+
+        <text x="0" y="32" class="label">AGI (UI/UX Design):</text>
+        <text x="120" y="32" class="value">90</text>
+        <line x1="145" y1="29" x2="260" y2="29" stroke="#00d9ff" stroke-width="4" stroke-linecap="round" />
+
+        <text x="0" y="52" class="label">INT (AI &amp; Logic):</text>
+        <text x="120" y="52" class="value">88</text>
+        <line x1="145" y1="49" x2="260" y2="49" stroke="#0052ff" stroke-width="4" stroke-linecap="round" opacity="0.8" />
+
+        <text x="0" y="72" class="label">LUK (Startup Luck):</text>
+        <text x="120" y="72" class="value">95</text>
+        <line x1="145" y1="69" x2="260" y2="69" stroke="#00d9ff" stroke-width="4" stroke-linecap="round" opacity="0.6" />
+      </g>
+    </g>
+  </g>
+
+  <!-- ==================== SKILLS / INVENTORY SECTION ==================== -->
+  <g transform="translate(50, 505)">
+    <text x="0" y="0" font-family="Georgia" font-style="italic" font-weight="bold" fill="#111115" font-size="16">🎒 SHINOBI INVENTORY (EQUIPPED SKILLS)</text>
+    <line x1="0" y1="8" x2="700" y2="8" stroke="#cbd5e1" stroke-width="2" />
+  </g>
+
+  <g transform="translate(50, 530)">
+    <!-- Row 1 -->
+    <!-- Col 1: JS -->
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="160" height="75" rx="8" class="slot-bg" />
+      <rect x="2" y="2" width="156" height="71" rx="6" fill="none" stroke="url(#blue-accent)" stroke-width="1.5" />
+      <circle cx="25" cy="38" r="10" fill="#0052ff" />
+      <text x="25" y="42" font-family="monospace" font-size="11" fill="#fff" font-weight="bold" text-anchor="middle">JS</text>
+      <text x="100" y="26" class="item-title">JAVASCRIPT</text>
+      <text x="100" y="41" class="item-rarity" fill="#00d9ff">LEGENDARY WEAPON</text>
+      <text x="100" y="56" class="item-stats">LV. 85 / DMG: 920</text>
+    </g>
+    <!-- Col 2: HTML/CSS -->
+    <g transform="translate(180, 0)">
+      <rect x="0" y="0" width="160" height="75" rx="8" class="slot-bg" />
+      <rect x="2" y="2" width="156" height="71" rx="6" fill="none" stroke="url(#blue-accent)" stroke-width="1.5" />
+      <circle cx="25" cy="38" r="10" fill="#00d9ff" />
+      <text x="25" y="42" font-family="monospace" font-size="10" fill="#fff" font-weight="bold" text-anchor="middle">H5</text>
+      <text x="100" y="26" class="item-title">HTML5 / CSS3</text>
+      <text x="100" y="41" class="item-rarity" fill="#00d9ff">EPIC BASTION</text>
+      <text x="100" y="56" class="item-stats">LV. 90 / SHIELD: 880</text>
+    </g>
+    <!-- Col 3: Canva/UI-UX -->
+    <g transform="translate(360, 0)">
+      <rect x="0" y="0" width="160" height="75" rx="8" class="slot-bg" />
+      <rect x="2" y="2" width="156" height="71" rx="6" fill="none" stroke="url(#blue-accent)" stroke-width="1.5" />
+      <circle cx="25" cy="38" r="10" fill="#0052ff" />
+      <text x="25" y="42" font-family="monospace" font-size="10" fill="#fff" font-weight="bold" text-anchor="middle">UI</text>
+      <text x="100" y="26" class="item-title">CANVA &amp; UI/UX</text>
+      <text x="100" y="41" class="item-rarity" fill="#00d9ff">LEGENDARY AMULET</text>
+      <text x="100" y="56" class="item-stats">LV. 92 / FOCUS: +15%</text>
+    </g>
+    <!-- Col 4: AI/Gemini -->
+    <g transform="translate(540, 0)">
+      <rect x="0" y="0" width="160" height="75" rx="8" class="slot-bg" />
+      <rect x="2" y="2" width="156" height="71" rx="6" fill="none" stroke="url(#blue-accent)" stroke-width="1.5" />
+      <circle cx="25" cy="38" r="10" fill="#00d9ff" />
+      <text x="25" y="42" font-family="monospace" font-size="10" fill="#fff" font-weight="bold" text-anchor="middle">AI</text>
+      <text x="100" y="26" class="item-title">AI &amp; GEMINI</text>
+      <text x="100" y="41" class="item-rarity" fill="#00d9ff">LEGENDARY HEIRLOOM</text>
+      <text x="100" y="56" class="item-stats">LV. 88 / INTEL: +30</text>
+    </g>
+
+    <!-- Row 2 -->
+    <!-- Col 1: Netlify -->
+    <g transform="translate(0, 95)">
+      <rect x="0" y="0" width="160" height="75" rx="8" class="slot-bg" />
+      <rect x="2" y="2" width="156" height="71" rx="6" fill="none" stroke="#243b53" stroke-width="1.5" />
+      <circle cx="25" cy="38" r="10" fill="#102a43" />
+      <text x="25" y="42" font-family="monospace" font-size="10" fill="#9fb3c8" font-weight="bold" text-anchor="middle">DE</text>
+      <text x="100" y="26" class="item-title">NETLIFY &amp; GIT</text>
+      <text x="100" y="41" class="item-rarity" fill="#9fb3c8">RARE TALISMAN</text>
+      <text x="100" y="56" class="item-stats">LV. 80 / SPEED: +50</text>
+    </g>
+    <!-- Col 2: Responsive -->
+    <g transform="translate(180, 95)">
+      <rect x="0" y="0" width="160" height="75" rx="8" class="slot-bg" />
+      <rect x="2" y="2" width="156" height="71" rx="6" fill="none" stroke="#243b53" stroke-width="1.5" />
+      <circle cx="25" cy="38" r="10" fill="#102a43" />
+      <text x="25" y="42" font-family="monospace" font-size="10" fill="#9fb3c8" font-weight="bold" text-anchor="middle">RE</text>
+      <text x="100" y="26" class="item-title">RESPONSIVE DESIGN</text>
+      <text x="100" y="41" class="item-rarity" fill="#9fb3c8">EPIC KIMONO</text>
+      <text x="100" y="56" class="item-stats">LV. 88 / EVADE: +25%</text>
+    </g>
+    <!-- Col 3: Strategy -->
+    <g transform="translate(360, 95)">
+      <rect x="0" y="0" width="160" height="75" rx="8" class="slot-bg" />
+      <rect x="2" y="2" width="156" height="71" rx="6" fill="none" stroke="#243b53" stroke-width="1.5" />
+      <circle cx="25" cy="38" r="10" fill="#102a43" />
+      <text x="25" y="42" font-family="monospace" font-size="10" fill="#9fb3c8" font-weight="bold" text-anchor="middle">ST</text>
+      <text x="100" y="26" class="item-title">PRODUCT STRATEGY</text>
+      <text x="100" y="41" class="item-rarity" fill="#9fb3c8">RARE SCROLL</text>
+      <text x="100" y="56" class="item-stats">LV. 82 / MIND: +20</text>
+    </g>
+    <!-- Col 4: Testing -->
+    <g transform="translate(540, 95)">
+      <rect x="0" y="0" width="160" height="75" rx="8" class="slot-bg" />
+      <rect x="2" y="2" width="156" height="71" rx="6" fill="none" stroke="#243b53" stroke-width="1.5" />
+      <circle cx="25" cy="38" r="10" fill="#102a43" />
+      <text x="25" y="42" font-family="monospace" font-size="10" fill="#9fb3c8" font-weight="bold" text-anchor="middle">TE</text>
+      <text x="100" y="26" class="item-title">TESTING &amp; OPTIM</text>
+      <text x="100" y="41" class="item-rarity" fill="#9fb3c8">COMMON POTION</text>
+      <text x="100" y="56" class="item-stats">LV. 75 / RESTORE: 100</text>
+    </g>
+  </g>
+
+  <!-- ==================== SASUKE HERO IMAGE AREA ==================== -->
+  <g transform="translate(50, 720)">
+    <!-- Sasuke Graphic with Chidori Lightning Glow -->
+    <g class="lightning">
+      <image href="sasuke.png" x="0" y="0" width="320" height="320" clip-path="url(#sasuke-clip)" />
+    </g>
+
+    <!-- Stylized Sasuke text wrapper -->
+    <g transform="translate(140, 240)">
+      <path d="M -10,10 L 150,10 M -10,38 L 150,38" stroke="#111115" stroke-width="4" stroke-dasharray="8 8" />
+      <text x="70" y="32" font-family="'Georgia', serif" font-size="28" font-style="italic" font-weight="bold" fill="#ffffff" stroke="#111115" stroke-width="2" paint-order="stroke fill" text-anchor="middle">Sasuke</text>
+    </g>
+  </g>
+
+  <!-- ==================== QUEST LOG SECTION ==================== -->
+  <g transform="translate(420, 720)">
+    <text x="0" y="0" font-family="Georgia" font-style="italic" font-weight="bold" fill="#111115" font-size="16">📜 ACTIVE MISSIONS (QUEST LOG)</text>
+    <line x1="0" y1="8" x2="330" y2="8" stroke="#cbd5e1" stroke-width="2" />
+  </g>
+
+  <g transform="translate(420, 745)">
+    <!-- Quest 1 -->
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="330" height="85" rx="8" class="quest-card" />
+      <path d="M 8 5 L 8 80" stroke="#00d9ff" stroke-width="3" />
+      <text x="20" y="20" class="quest-title">🔥 ACTIVE: The AI website generator</text>
+      <text x="20" y="37" class="quest-desc">Project: chatbotmarco (Gemini Powered)</text>
+      <text x="20" y="52" class="quest-reward">REWARD: +2,500 XP | LOOT: AI Cognitive Core</text>
+      <text x="20" y="70" class="quest-status" fill="#ffe259">PROGRESS: [████████░░] 80%</text>
+    </g>
+
+    <!-- Quest 2 -->
+    <g transform="translate(0, 98)">
+      <rect x="0" y="0" width="330" height="85" rx="8" class="quest-card" />
+      <path d="M 8 5 L 8 80" stroke="#0052ff" stroke-width="3" />
+      <text x="20" y="20" class="quest-title">🟢 COMPLETE: The Polaroid Bazaar</text>
+      <text x="20" y="37" class="quest-desc">Project: Noira custom boutique with WhatsApp</text>
+      <text x="20" y="52" class="quest-reward">REWARD: +1,500 XP | LOOT: customization blueprints</text>
+      <text x="20" y="70" class="quest-status" fill="#39ff14">STATUS: SUCCESSFUL [100%]</text>
+    </g>
+
+    <!-- Quest 3 -->
+    <g transform="translate(0, 196)">
+      <rect x="0" y="0" width="330" height="85" rx="8" class="quest-card" />
+      <path d="M 8 5 L 8 80" stroke="#0052ff" stroke-width="3" />
+      <text x="20" y="20" class="quest-title">🟢 COMPLETE: Music Sanctuary</text>
+      <text x="20" y="37" class="quest-desc">Project: Interactive audio controller dashboard</text>
+      <text x="20" y="52" class="quest-reward">REWARD: +1,200 XP | LOOT: Legendary Headset</text>
+      <text x="20" y="70" class="quest-status" fill="#39ff14">STATUS: SUCCESSFUL [100%]</text>
+    </g>
+  </g>
+
+  <!-- ==================== CO-OP / MULTIPLAYER ==================== -->
+  <g transform="translate(50, 1100)">
+    <text x="0" y="0" font-family="Georgia" font-style="italic" font-weight="bold" fill="#111115" font-size="16">🤝 MULTIPLAYER PARTY (JOIN CO-OP)</text>
+    <line x1="0" y1="8" x2="700" y2="8" stroke="#cbd5e1" stroke-width="2" />
+  </g>
+
+  <g transform="translate(50, 1125)">
+    <!-- Guild card -->
+    <rect x="0" y="0" width="700" height="80" rx="12" fill="url(#dark-card)" stroke="#243b53" stroke-width="1.5" />
+    <text x="20" y="30" font-family="Georgia" font-size="13" fill="#ffffff">Join the party! Always open for hackathons, startups, and open source raids.</text>
+    <text x="20" y="50" font-family="Segoe UI" font-size="10" fill="#9fb3c8">ACTIVE SLOT: LEAD BUILDER // AUTOMATION SPECIALIST // FOUNDER</text>
+    <text x="20" y="65" font-family="Georgia" font-style="italic" font-size="10" fill="#00d9ff">"Tak peduli seberapa gelap jalannya, aku akan tetap terus berjalan."</text>
+
+    <!-- Interactive Buttons -->
+    <g transform="translate(420, 20)">
+      <a href="https://github.com/DAS-BABA" target="_blank">
+        <rect x="0" y="0" width="120" height="36" rx="8" fill="#0052ff" stroke="#00d9ff" stroke-width="1" />
+        <text x="60" y="22" font-family="Segoe UI" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">JOIN GUILD</text>
+      </a>
+    </g>
+    <g transform="translate(555, 20)">
+      <a href="mailto:saumilprajapati111@gmail.com" target="_blank">
+        <rect x="0" y="0" width="120" height="36" rx="8" fill="#1b2230" stroke="#0052ff" stroke-width="1" />
+        <text x="60" y="22" font-family="Segoe UI" font-size="11" font-weight="bold" fill="#ffccd5" text-anchor="middle">SEND SCROLL</text>
+      </a>
+    </g>
+  </g>
+
+  <!-- ==================== FOOTER ==================== -->
+  <g transform="translate(400, 1260)">
+    <!-- Pill container from image -->
+    <rect x="-100" y="0" width="200" height="25" rx="12.5" fill="#102a43" />
+    <text x="0" y="16" font-family="Segoe UI" font-size="9" font-weight="bold" fill="#9fb3c8" text-anchor="middle">© 2026 | DAS-BABA All rights reserved</text>
+  </g>
+</svg>
