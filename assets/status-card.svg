@@ -1,0 +1,213 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" width="100%" height="300" style="background: transparent;">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="sakura-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1c0f16" />
+      <stop offset="100%" stop-color="#2d1520" />
+    </linearGradient>
+    <linearGradient id="sakura-border" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffb7c5" />
+      <stop offset="50%" stop-color="#ff8fa3" />
+      <stop offset="100%" stop-color="#ffe3e8" />
+    </linearGradient>
+    <linearGradient id="hp-sakura" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffb7c5" />
+      <stop offset="100%" stop-color="#ff4d6d" />
+    </linearGradient>
+    <linearGradient id="mp-sakura" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fae0e4" />
+      <stop offset="100%" stop-color="#ff8fa3" />
+    </linearGradient>
+    <linearGradient id="xp-sakura" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffe259" />
+      <stop offset="100%" stop-color="#ffa751" />
+    </linearGradient>
+
+    <!-- Sakura Petal Shape -->
+    <g id="petal">
+      <path d="M 0 0 C -3 -6, -6 -10, 0 -15 C 6 -10, 3 -6, 0 0" fill="#ffb7c5" opacity="0.8" />
+    </g>
+    <!-- Sakura Blossom -->
+    <g id="blossom">
+      <use href="#petal" transform="rotate(0)" />
+      <use href="#petal" transform="rotate(72)" />
+      <use href="#petal" transform="rotate(144)" />
+      <use href="#petal" transform="rotate(216)" />
+      <use href="#petal" transform="rotate(288)" />
+      <circle cx="0" cy="0" r="2.5" fill="#fff" opacity="0.9" />
+    </g>
+
+    <!-- Glow Filter -->
+    <filter id="sakura-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    .title { font-family: 'Georgia', serif; font-style: italic; font-weight: bold; fill: #ffb7c5; letter-spacing: 2px; }
+    .label { font-family: 'Segoe UI', sans-serif; font-size: 10px; fill: #d4a3b8; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+    .value { font-family: 'Segoe UI', sans-serif; font-size: 12px; fill: #ffffff; font-weight: bold; }
+    .header-name { font-family: 'Georgia', serif; font-size: 22px; font-weight: 900; fill: #ffffff; letter-spacing: 1.5px; }
+    .subtitle-class { font-family: 'Segoe UI', sans-serif; font-size: 11px; fill: #ffb7c5; font-weight: 800; letter-spacing: 3px; }
+    .stat-bar { rx: 3; ry: 3; }
+    .stat-label { font-family: 'Segoe UI', sans-serif; font-size: 12px; fill: #ffd3e2; font-weight: 600; }
+    .stat-val { font-family: 'Courier New', monospace; font-size: 12px; fill: #ffe259; font-weight: bold; }
+    @keyframes wind {
+      0% { transform: translate(0, 0) rotate(0deg); opacity: 0.2; }
+      50% { opacity: 0.6; }
+      100% { transform: translate(60px, 40px) rotate(360deg); opacity: 0; }
+    }
+    .drifting-petal { animation: wind 6s infinite linear; }
+  </style>
+
+  <!-- Background Card -->
+  <rect x="5" y="5" width="590" height="290" rx="18" fill="url(#sakura-bg)" stroke="url(#sakura-border)" stroke-width="2.5" filter="url(#sakura-glow)" />
+
+  <!-- Falling Sakura Petals Background Animation -->
+  <use href="#petal" x="80" y="50" class="drifting-petal" style="animation-delay: 0s; animation-duration: 7s;" />
+  <use href="#petal" x="350" y="30" class="drifting-petal" style="animation-delay: 2s; animation-duration: 9s;" />
+  <use href="#petal" x="200" y="100" class="drifting-petal" style="animation-delay: 4s; animation-duration: 6s;" />
+  <use href="#petal" x="500" y="80" class="drifting-petal" style="animation-delay: 1s; animation-duration: 8s;" />
+
+  <!-- Cherry Blossom Corner Decorations -->
+  <use href="#blossom" x="25" y="25" transform="scale(1.2)" />
+  <use href="#blossom" x="575" y="25" transform="scale(1.2)" />
+  <use href="#blossom" x="25" y="275" transform="scale(1.2)" />
+  <use href="#blossom" x="575" y="275" transform="scale(1.2)" />
+  
+  <use href="#blossom" x="40" y="20" transform="scale(0.8)" />
+  <use href="#blossom" x="560" y="20" transform="scale(0.8)" />
+  <use href="#blossom" x="40" y="280" transform="scale(0.8)" />
+  <use href="#blossom" x="560" y="280" transform="scale(0.8)" />
+
+  <!-- Player Header Information -->
+  <g transform="translate(50, 45)">
+    <!-- Level Badge -->
+    <rect x="0" y="0" width="60" height="60" rx="12" fill="#301924" stroke="#ff8fa3" stroke-width="1.5" />
+    <text x="30" y="22" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="9" font-weight="900" fill="#ff8fa3">LEVEL</text>
+    <text x="30" y="48" text-anchor="middle" font-family="'Georgia', serif" font-size="24" font-weight="900" fill="#ffffff">21</text>
+
+    <!-- Name & Title -->
+    <text x="78" y="22" class="header-name">DAS-BABA</text>
+    <text x="78" y="42" class="subtitle-class">SAKURA ARCHITECT // CODE ALCHEMIST</text>
+    <!-- Soft Decorative Line -->
+    <path d="M 78 48 L 300 48" stroke="url(#sakura-border)" stroke-width="1" opacity="0.6" />
+  </g>
+
+  <!-- Status Marker -->
+  <g transform="translate(470, 40)">
+    <use href="#blossom" x="10" y="10" transform="scale(0.7)" fill="#ffb7c5" />
+    <text x="25" y="14" font-family="monospace" font-size="10" font-weight="bold" fill="#ffb7c5">SEASON: SPRING</text>
+  </g>
+
+  <!-- RPG Gauges -->
+  <g transform="translate(50, 130)">
+    <!-- HP (Health / Vitality) -->
+    <text x="0" y="12" class="label">HP</text>
+    <rect x="35" y="2" width="220" height="12" rx="4" fill="#2d1520" stroke="#482433" stroke-width="1" />
+    <rect x="35" y="2" width="220" height="12" class="stat-bar" fill="url(#hp-sakura)" />
+    <text x="265" y="12" class="value">999/999</text>
+
+    <!-- MP (Mana / Logic) -->
+    <text x="0" y="37" class="label">MP</text>
+    <rect x="35" y="27" width="220" height="12" rx="4" fill="#2d1520" stroke="#482433" stroke-width="1" />
+    <rect x="35" y="27" width="220" height="12" class="stat-bar" fill="url(#mp-sakura)" />
+    <text x="265" y="37" class="value">750/750</text>
+
+    <!-- XP (Experience) -->
+    <text x="0" y="62" class="label">XP</text>
+    <rect x="35" y="52" width="220" height="12" rx="4" fill="#2d1520" stroke="#482433" stroke-width="1" />
+    <rect x="35" y="52" width="127" height="12" class="stat-bar" fill="url(#xp-sakura)" />
+    <text x="265" y="62" class="value">579/1000</text>
+  </g>
+
+  <!-- Vertical Partition -->
+  <line x1="365" y1="120" x2="365" y2="260" stroke="#482433" stroke-dasharray="3 3" stroke-width="1.5" />
+
+  <!-- Attributes Panel -->
+  <g transform="translate(390, 130)">
+    <!-- STR -->
+    <text x="0" y="12" class="stat-label">STR (Frontend)</text>
+    <text x="135" y="12" class="stat-val">85</text>
+    <g transform="translate(165, 5)">
+      <circle cx="5" cy="4" r="4" fill="#ff4d6d" />
+      <circle cx="17" cy="4" r="4" fill="#ff4d6d" />
+      <circle cx="29" cy="4" r="4" fill="#ff4d6d" />
+      <circle cx="41" cy="4" r="4" fill="#ff4d6d" />
+      <circle cx="53" cy="4" r="4" fill="#ff4d6d" />
+      <circle cx="65" cy="4" r="4" fill="#ff4d6d" />
+      <circle cx="77" cy="4" r="4" fill="#ff4d6d" />
+      <circle cx="89" cy="4" r="4" fill="#ff4d6d" />
+      <circle cx="101" cy="4" r="4" fill="#482433" />
+      <circle cx="113" cy="4" r="4" fill="#482433" />
+    </g>
+
+    <!-- AGI -->
+    <text x="0" y="37" class="stat-label">AGI (UI/UX)</text>
+    <text x="135" y="37" class="stat-val">90</text>
+    <g transform="translate(165, 30)">
+      <circle cx="5" cy="4" r="4" fill="#ff8fa3" />
+      <circle cx="17" cy="4" r="4" fill="#ff8fa3" />
+      <circle cx="29" cy="4" r="4" fill="#ff8fa3" />
+      <circle cx="41" cy="4" r="4" fill="#ff8fa3" />
+      <circle cx="53" cy="4" r="4" fill="#ff8fa3" />
+      <circle cx="65" cy="4" r="4" fill="#ff8fa3" />
+      <circle cx="77" cy="4" r="4" fill="#ff8fa3" />
+      <circle cx="89" cy="4" r="4" fill="#ff8fa3" />
+      <circle cx="101" cy="4" r="4" fill="#ff8fa3" />
+      <circle cx="113" cy="4" r="4" fill="#482433" />
+    </g>
+
+    <!-- INT -->
+    <text x="0" y="62" class="stat-label">INT (AI/Logic)</text>
+    <text x="135" y="62" class="stat-val">88</text>
+    <g transform="translate(165, 55)">
+      <circle cx="5" cy="4" r="4" fill="#ffe259" />
+      <circle cx="17" cy="4" r="4" fill="#ffe259" />
+      <circle cx="29" cy="4" r="4" fill="#ffe259" />
+      <circle cx="41" cy="4" r="4" fill="#ffe259" />
+      <circle cx="53" cy="4" r="4" fill="#ffe259" />
+      <circle cx="65" cy="4" r="4" fill="#ffe259" />
+      <circle cx="77" cy="4" r="4" fill="#ffe259" />
+      <circle cx="89" cy="4" r="4" fill="#ffe259" />
+      <circle cx="101" cy="4" r="4" fill="#482433" />
+      <circle cx="113" cy="4" r="4" fill="#482433" />
+    </g>
+
+    <!-- DEF -->
+    <text x="0" y="87" class="stat-label">DEF (Testing)</text>
+    <text x="135" y="87" class="stat-val">75</text>
+    <g transform="translate(165, 80)">
+      <circle cx="5" cy="4" r="4" fill="#ffccd5" />
+      <circle cx="17" cy="4" r="4" fill="#ffccd5" />
+      <circle cx="29" cy="4" r="4" fill="#ffccd5" />
+      <circle cx="41" cy="4" r="4" fill="#ffccd5" />
+      <circle cx="53" cy="4" r="4" fill="#ffccd5" />
+      <circle cx="65" cy="4" r="4" fill="#ffccd5" />
+      <circle cx="77" cy="4" r="4" fill="#ffccd5" />
+      <circle cx="89" cy="4" r="4" fill="#482433" />
+      <circle cx="101" cy="4" r="4" fill="#482433" />
+      <circle cx="113" cy="4" r="4" fill="#482433" />
+    </g>
+
+    <!-- LUK -->
+    <text x="0" y="112" class="stat-label">LUK (Startup)</text>
+    <text x="135" y="112" class="stat-val">95</text>
+    <g transform="translate(165, 105)">
+      <circle cx="5" cy="4" r="4" fill="#ffa751" />
+      <circle cx="17" cy="4" r="4" fill="#ffa751" />
+      <circle cx="29" cy="4" r="4" fill="#ffa751" />
+      <circle cx="41" cy="4" r="4" fill="#ffa751" />
+      <circle cx="53" cy="4" r="4" fill="#ffa751" />
+      <circle cx="65" cy="4" r="4" fill="#ffa751" />
+      <circle cx="77" cy="4" r="4" fill="#ffa751" />
+      <circle cx="89" cy="4" r="4" fill="#ffa751" />
+      <circle cx="101" cy="4" r="4" fill="#ffa751" />
+      <circle cx="113" cy="4" r="4" fill="#482433" />
+    </g>
+  </g>
+</svg>
